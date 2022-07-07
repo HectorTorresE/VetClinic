@@ -9,3 +9,7 @@ CREATE TABLE animals(
   weight_kg DECIMAL not NULL,
   PRIMARY KEY(id)
 );
+
+
+ALTER TABLE animals
+ADD COLUMN species varchar(100);
