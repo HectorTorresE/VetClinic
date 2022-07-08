@@ -37,3 +37,25 @@ ALTER TABLE animals
 ADD CONSTRAINT FK_species
 FOREIGN KEY (species_id)
 REFERENCES species (id);
+
+
+DROP TABLE IF EXISTS vets;
+CREATE TABLE vets(
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(100),
+  age INTEGER,
+  date_of_graduation DATE
+);
+
+DROP TABLE IF EXISTS specializations;
+CREATE TABLE specializations(
+  vet_id INTEGER,
+  species_id INTEGER
+);
+
+DROP TABLE IF EXISTS visits;
+CREATE TABLE visits(
+  animal_id INTEGER,
+  vet_id INTEGER,
+  visit_date DATE
+);
